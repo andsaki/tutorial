@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "clean:cache": "rm -rf node_modules/.cache"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
@@ -17,5 +18,11 @@
   "devDependencies": {
     "eslint": "^9.1.1",
     "prettier": "^3.2.5"
+  },
+    "lint-staged": {
+      "*.{ts,tsx,js}": [
+      "prettier --write",
+      "eslint --fix"
+      ]
   }
 }
